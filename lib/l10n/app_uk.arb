@@ -1,0 +1,30 @@
+{
+  "readyToStartLearning": "Готові почати навчання?",
+  "chooseLanguage": "Оберіть мову, яку хочете вивчати",
+  "register": "Зареєструватися",
+  "continueWithGoogle": "Продовжити з ",
+  "email": "Електронна пошта",
+  "name": "Ім'я",
+  "password": "Пароль (мінімум 6 символів)",
+  "alreadyHaveAccount": "Я вже маю акаунт",
+  "startLearning": "Почати навчання",
+  "registerAndStartLearning": "Зареєструйся та розпочни вивчати",
+  "or": "АБО",
+  "login": "Вхід",
+  "loginWithGoogle": "Увійти з ",
+  "continue_button": "Продовжити",
+  "settings": "Налаштування",
+  "your_name": "Ваше ім'я",
+  "content_language": "Мова контенту",
+  "signIn": "Увійти",
+  "signUp": "Зареєструватися",
+  "profile": "Профіль",
+  
+  "lesson1_theory_hello": "'{example}' означає 'Привіт!'",
+  "lesson1_question_hello": "Як сказати 'Привіт'?",
+  "lesson1_theory_hi": "'{example}' також використовується для привітання.",
+  "lesson1_question_hi": "Як сказати 'Привіт' в неформальній формі?",
+  "lesson1_theory_niceToMeetYou": "'{example}' означає 'Приємно познайомитися!'",
+  "lesson_finish_sentence": "Закінчіть речення: '{example}'"
+
+}

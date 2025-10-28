@@ -1,0 +1,47 @@
+{
+  "id": "lesson3",
+  "title": "Ending a conversation",
+  "unit": "unit1",
+  "steps": [
+    {
+      "type": "theory",
+      "text": "Goodbye! означає 'До побачення!'."
+    },
+    {
+      "type": "question",
+      "text": "______!",
+      "answers": ["Good", "Good by", "Goodbye"],
+      "correctAnswer": "Goodbye"
+    },
+    {
+      "type": "theory",
+      "text": "'Bye' - 'До побачення'."
+    },
+    {
+      "type": "question",
+      "text": "___!",
+      "answers": ["Bay", "Bye", "Buy"],
+      "correctAnswer": "Bye"
+    },
+    {
+      "type": "theory",
+      "text": "'Take care' означає 'Береги себе'."
+    },
+    {
+      "type": "question",
+      "text": "Nice to meet you! Take ___!",
+      "answers": ["carre", "car", "care"],
+      "correctAnswer": "care"
+    },
+    {
+      "type": "theory",
+      "text": "'See you later' означає 'До зустрічі пізніше'."
+    },
+    {
+      "type": "question",
+      "text": "___ you later!",
+      "answers": ["See", "Se", "Sey"],
+      "correctAnswer": "See"
+    }
+  ]
+}

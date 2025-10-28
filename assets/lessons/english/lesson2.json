@@ -1,0 +1,45 @@
+{
+  "id": "lesson2",
+  "title": "Introducing Yourself",
+  "unit": "unit1",
+  "steps": [
+    {
+      "type": "theory",
+      "text": "What's your name? означає 'Як тебе звати?'."
+    },
+    {
+      "type": "question",
+      "text": "___ your name?",
+      "answers": ["Who", "What's", "Was"],
+      "correctAnswer": "What's"
+    },
+    {
+      "type": "theory",
+      "text": "'My name's Ana' - 'Мене звати Ана'."
+    },
+    {
+      "type": "question",
+      "text": "___ name's John.",
+      "answers": ["My", "Your", "His"],
+      "correctAnswer": "My"
+    },
+    {
+      "type": "theory",
+      "text": "'I'm David' означає 'Я Девід'."
+    },
+    {
+      "type": "matching",
+      "pairs": [
+        { "left": "I'm...", "right": "Dan." },
+        { "left": "My name...", "right": "is Paul." },
+        { "left": "What's your...", "right": "name?" }
+      ]
+    },
+    {
+      "type": "question",
+      "text": "Hi, ___ name's Rachel.",
+      "answers": ["I'm", "your", "my"],
+      "correctAnswer": "my"
+    }
+  ]
+}

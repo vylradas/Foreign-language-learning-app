@@ -1,0 +1,55 @@
+{
+  "id": "lesson4",
+  "title": "Saying how you are",
+  "unit": "unit2",
+  "steps": [
+    {
+      "type": "theory",
+      "text": "\"How are you?\" означає \"Як ти?\"."
+    },
+    {
+      "type": "question",
+      "text": "___ are you?",
+      "answers": ["Who", "How", "What"],
+      "correctAnswer": "How"
+    },
+    {
+      "type": "theory",
+      "text": "\"I'm fine, thanks\" — \"У мене все добре, дякую\"."
+    },
+    {
+      "type": "question",
+      "text": "I'm ___, thanks.",
+      "answers": ["fine", "find", "fun"],
+      "correctAnswer": "fine"
+    },
+    {
+      "type": "theory",
+      "text": "\"How's it going?\" — ще один спосіб запитати \"Як справи?\"."
+    },
+    {
+      "type": "question",
+      "text": "How's ___ going?",
+      "answers": ["it", "is", "he"],
+      "correctAnswer": "it"
+    },
+    {
+      "type": "theory",
+      "text": "Відповіді на \"How's it going?\": \"I'm good, thanks\", \"I'm great, thanks!\""
+    },
+    {
+      "type": "matching",
+      "pairs": [
+        { "left": "How are...", "right": "you?" },
+        { "left": "I'm...", "right": "good, thanks." },
+        { "left": "How's it...", "right": "going?" }
+      ]
+    },
+    {
+      "type": "question",
+      "text": "I'm ___, thanks!",
+      "answers": ["great", "greet", "grate"],
+      "correctAnswer": "great"
+    }
+  ]
+}

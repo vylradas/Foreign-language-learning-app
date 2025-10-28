@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "142797727473",
+    "project_id": "lingua-iter",
+    "storage_bucket": "lingua-iter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142797727473:android:77b1988c443ddb25696b50",
+        "android_client_info": {
+          "package_name": "com.example.lingua_iter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAB8PzZivLhN43_kk_G5Hxqh9yQq7crTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

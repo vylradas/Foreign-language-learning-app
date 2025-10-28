@@ -1,0 +1,41 @@
+{
+  "id": "lesson1",
+  "title": "Hallo!",
+  "unit": "unit1",
+  "steps": [
+    {
+      "type": "theory",
+      "text": "lesson1_theory_hello",
+      "example": "Hallo!"
+    },
+    {
+      "type": "question",
+      "text": "lesson1_question_hello",
+      "answers": ["Hallo", "Tschüss", "Danke"],
+      "correctAnswer": "Hallo"
+    },
+    {
+      "type": "theory",
+      "text": "lesson1_theory_hi",
+      "example": "Hi"
+    },
+    {
+      "type": "question",
+      "text": "lesson1_question_hi",
+      "answers": ["Hi", "Hallo", "Ciao"],
+      "correctAnswer": "Hi"
+    },
+    {
+      "type": "theory",
+      "text": "lesson1_theory_niceToMeetYou",
+      "example": "Schön, dich kennenzulernen!"
+    },
+    {
+      "type": "question",
+      "text": "lesson_finish_sentence",
+      "example": "Schön, dich ___!",
+      "answers": ["kennenzulernen", "Hallo", "Tschüss"],
+      "correctAnswer": "kennenzulernen"
+    }
+  ]
+}
