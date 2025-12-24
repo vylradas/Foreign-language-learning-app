@@ -22,9 +22,19 @@ class _MainScreenState extends State<MainScreen> {
     return FutureBuilder<UserProfile?>(
       future: fetchUserProfile(),
       builder: (context, snapshot) {
-        if (!snapshot.hasData) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
           return const Scaffold(
             body: Center(child: CircularProgressIndicator()),
+          );
+        }
+        if (snapshot.hasError) {
+          return Scaffold(
+            body: Center(child: Text('Помилка завантаження профілю: ${snapshot.error}')),
+          );
+        }
+        if (!snapshot.hasData) {
+          return const Scaffold(
+            body: Center(child: Text('Профіль не знайдено')),
           );
         }
         final userProfile = snapshot.data!;

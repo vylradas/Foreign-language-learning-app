@@ -68,13 +68,28 @@ class _LessonScreenState extends State<LessonScreen> {
   }
 
   Future<void> _markLessonCompleted() async {
-    final lang = 'en'; // або визначайте активну мову динамічно
-    await FirebaseFirestore.instance
-        .collection('languages')
-        .doc(lang)
-        .collection('lessons')
-        .doc(widget.lesson.id)
-        .update({'isCompleted': true});
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+
+    final userDoc = FirebaseFirestore.instance.collection('users').doc(user.uid);
+    final userSnapshot = await userDoc.get();
+    final data = userSnapshot.data();
+    if (data == null) return;
+
+    List languages = data['languages'] ?? [];
+    final activeLang = data['activeLanguageCode'];
+    for (var lang in languages) {
+      if (lang['languageCode'] == activeLang) {
+        List<String> completed = List<String>.from(lang['completedLessons'] ?? []);
+        if (!completed.contains(widget.lesson.id)) {
+          completed.add(widget.lesson.id);
+          lang['completedLessons'] = completed;
+        }
+        break;
+      }
+    }
+
+    await userDoc.update({'languages': languages});
   }
 
   Future<void> _addExp(int exp) async {

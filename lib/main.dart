@@ -2,14 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
-import 'package:lingua_iter/repositories/lesson_repository.dart';
 import 'package:lingua_iter/firebase_options.dart';
-import 'package:lingua_iter/screens/main_screen.dart';
 import 'package:lingua_iter/screens/sign_in/sing_in_screen.dart';
-import 'package:lingua_iter/screens/sign_up/sign_up_screen.dart';
-import 'package:lingua_iter/screens/welcome_screen/welcome_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:lingua_iter/upload_lesson.dart';
+import 'package:lingua_iter/screens/auth_gate.dart';
 
 final Rx<Locale> appLocale = Locale('uk').obs;
 
@@ -47,7 +43,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: WelcomeScreen(),
+      home: const AuthGate(),
       routes: {
         '/signin': (context) => SignInScreen(),
       },

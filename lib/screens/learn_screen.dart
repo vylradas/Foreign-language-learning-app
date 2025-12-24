@@ -31,7 +31,11 @@ class _LearnScreenState extends State<LearnScreen> {
   }
 
   void _loadLessons() {
-    _lessonsFuture = LessonRepository().fetchLessons(widget.userProfile.activeLanguageCode);
+    final activeLangProgress = widget.userProfile.languages.firstWhere(
+      (lang) => lang.languageCode == widget.userProfile.activeLanguageCode,
+      orElse: () => UserLanguageProgress(languageCode: widget.userProfile.activeLanguageCode, totalPoints: 0, completedLessons: []),
+    );
+    _lessonsFuture = LessonRepository().fetchLessons(widget.userProfile.activeLanguageCode, activeLangProgress.completedLessons.toSet());
   }
 
   Future<void> _openLesson(LessonDetail lesson) async {

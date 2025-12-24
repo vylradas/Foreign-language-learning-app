@@ -36,4 +36,22 @@ class LessonDetail {
     'isCompleted': isCompleted,
     'imageUrl': imageUrl,
   };
+
+  LessonDetail copyWith({
+    String? id,
+    String? title,
+    List<LessonStep>? steps,
+    String? unit,
+    bool? isCompleted,
+    String? imageUrl,
+  }) {
+    return LessonDetail(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      steps: steps ?? this.steps,
+      unit: unit ?? this.unit,
+      isCompleted: isCompleted ?? this.isCompleted,
+      imageUrl: imageUrl ?? this.imageUrl,
+    );
+  }
 }

@@ -5,8 +5,8 @@ void main() {
   group('UserLanguageProgress', () {
     final progress = UserLanguageProgress(
       languageCode: 'en',
-      lessonsCompleted: 5,
       totalPoints: 100,
+      completedLessons: ['lesson1', 'lesson2', 'lesson3', 'lesson4', 'lesson5'],
     );
 
     test('should create a UserLanguageProgress object correctly', () {
@@ -28,8 +28,8 @@ void main() {
   group('UserProfile', () {
     final initialProgress = UserLanguageProgress(
       languageCode: 'fr',
-      lessonsCompleted: 10,
       totalPoints: 250,
+      completedLessons: List.generate(10, (i) => 'lesson${i+1}'),
     );
 
     final profile = UserProfile(
@@ -60,7 +60,7 @@ void main() {
     });
 
     test('should correctly handle adding/removing/updating languages', () {
-      final newProgress = UserLanguageProgress(languageCode: 'es', lessonsCompleted: 2, totalPoints: 40);
+      final newProgress = UserLanguageProgress(languageCode: 'es', totalPoints: 40, completedLessons: ['lesson1', 'lesson2']);
       final updatedLanguages = List<UserLanguageProgress>.from(profile.languages)..add(newProgress);
 
       expect(updatedLanguages.length, 2);

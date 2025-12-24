@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,10 +6,8 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:intl/intl.dart';
 import 'package:lingua_iter/models/languages.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:lingua_iter/screens/main_screen.dart';
 
 
 class SignUpScreen extends StatefulWidget {
@@ -47,22 +43,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
       User? user = userCredential.user;
       if (user != null) {
+        // Надсилання листа 
+        await user.sendEmailVerification();
+
+        // Збереження користувача в Firestore
         await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
           'email': emailController.text.trim(),
           'name': nameController.text.trim(),
           'languages': [
             {
               'languageCode': widget.selectedLanguage,
-              'lessonsCompleted': 0,
               'totalPoints': 0,
+              'completedLessons': [],
             }
           ],
           'streak': 0,
           'activeLanguageCode': widget.selectedLanguage,
         });
-        Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => MainScreen()),
-      );
+
+        // AuthGate автоматично перенаправить до VerificationScreen
+
       }
     } catch (e) {
       print("Помилка реєстрації: $e");
@@ -96,8 +96,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             'languages': [
               {
                 'languageCode': widget.selectedLanguage,
-                'lessonsCompleted': 0,
                 'totalPoints': 0,
+                'completedLessons': [],
               }
             ],
             'streak': 0,
@@ -198,7 +198,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Text(
-                          AppLocalizations.of(context)!.or ?? 'АБО',
+                          AppLocalizations.of(context)!.or,
                           style: GoogleFonts.openSans(fontSize: 15, fontWeight: FontWeight.w500),
                         ),
                       ),

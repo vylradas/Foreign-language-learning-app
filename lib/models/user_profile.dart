@@ -42,24 +42,25 @@ class UserProfile {
 
 class UserLanguageProgress {
   final String languageCode; // 'en', 'de', 'uk' тощо
-  final int lessonsCompleted;
+  int get lessonsCompleted => completedLessons.length;
   final int totalPoints;
+  final List<String> completedLessons; // список id пройдених уроків
 
   UserLanguageProgress({
     required this.languageCode,
-    required this.lessonsCompleted,
     required this.totalPoints,
+    required this.completedLessons,
   });
 
   factory UserLanguageProgress.fromJson(Map<String, dynamic> json) => UserLanguageProgress(
     languageCode: json['languageCode'],
-    lessonsCompleted: json['lessonsCompleted'] ?? 0,
     totalPoints: json['totalPoints'] ?? 0,
+    completedLessons: List<String>.from(json['completedLessons'] ?? []),
   );
 
   Map<String, dynamic> toJson() => {
     'languageCode': languageCode,
-    'lessonsCompleted': lessonsCompleted,
     'totalPoints': totalPoints,
+    'completedLessons': completedLessons,
   };
 }
