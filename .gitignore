@@ -79,4 +79,4 @@ pubspec.lock
 
 # Misc
 *.log
-android/app/google-services.json
+android/app/git rm --cached android/app/google-services.json
